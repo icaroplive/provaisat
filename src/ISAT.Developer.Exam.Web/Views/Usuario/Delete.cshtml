@@ -1,0 +1,60 @@
+﻿@model ISAT.Developer.Exam.Web.Models.UsuarioViewModel
+@{
+    ViewData["Title"] = "Deletar Usuário";
+}
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title ">@ViewData["Title"]</h4>
+        <p class="card-category">
+            Tem certeza que deseja excluir este usuário?
+        </p>
+
+    </div>
+
+    <div class="card-body">
+        <form asp-action="Delete">
+            <input asp-for="Id" hidden />
+
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Id)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Id)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.nome)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.nome)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.sobreNome)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.sobreNome)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.email)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.email)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.idade)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.idade)
+                </dd>
+            </dl>
+
+            <div class="form-group">
+                <input type="submit" value="Deletar" class="btn btn-danger" />
+            </div>
+
+            <div>
+                <a asp-action="Index">Voltar para lista</a>
+            </div>
+        </form>
+    </div>
+</div>

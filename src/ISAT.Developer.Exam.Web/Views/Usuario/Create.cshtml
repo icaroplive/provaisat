@@ -1,0 +1,71 @@
+﻿@model ISAT.Developer.Exam.Core.Entities.Models.Usuario
+@{
+    ViewData["Title"] = "Cadastrar Usuário";
+}
+
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title ">@ViewData["Title"]</h4>
+        <p class="card-category">
+            Cadastro de Novo Usuário
+        </p>
+    </div>
+
+    <div class="card-body">
+        <form asp-action="Create">
+            
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="bmd-label-floating" asp-for="nome"></label>
+                        <input asp-for="nome" class="form-control" maxlength="255" />
+                        <span asp-validation-for="nome" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Sobrenome</label>
+                        <input asp-for="sobreNome" class="form-control" maxlength="255" />
+                        <span asp-validation-for="sobreNome" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Idade</label>
+                        <input asp-for="idade" class="form-control" />
+                        <span asp-validation-for="idade" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input asp-for="email" class="form-control" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+
+            <div>
+                <a asp-action="Index">Voltar para lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
